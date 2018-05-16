@@ -1,0 +1,970 @@
+/* ###################################
+########### -- POLICES -- ############
+################################### */
+
+@font-face {
+	font-family: 'Roboto-Medium';
+	src: url('fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+/* ################################################
+########### -- PROPRIETES GENERALES -- ############
+################################################ */
+
+*
+{
+	/* Mise à zéro des marges pour partir sur une bonne base */
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto-Medium';			/* police de base */
+}
+
+a
+{
+	color: #000;
+	list-style-type: none;  	/* suppression des puces */
+	text-decoration: none;  	/* suppression du soulignage */
+}
+
+p
+{
+	flex-wrap: wrap;			/* les éléments des paragraphes vont à la ligne lorsqu'ils n'ont plus de place */
+	line-height: 180%;			/* augmentation de l'espace entre les lignes des paragraphes */
+	font-size: 1.1em;
+}
+
+#services h1, #projets h1
+{
+	text-align: center;			/* centrage du titre par rapport au bloc */
+	font-size: 3.5em;
+}
+
+.header_services, .header_projets
+{
+	margin: auto;			/* centrage du bloc (titre, paragraphe) par rapport à la page */
+}
+
+.header_services p, .header_projets p
+{
+	width: 70%;
+	text-align: center;			/* centrage du texte par rapport au bloc */
+	margin: auto;			/* centrage du bloc par rapport à la page */
+}
+
+.separation
+{
+	width: 200px;
+	height: 50px;
+	position: relative;
+	margin: auto;			/* centrage par rapport à la page */
+}
+
+.lisere
+{
+	width: 200px;
+	height: 1px;
+	background-color: #E5E5E5;
+	position: absolute;
+	z-index: 1;			/* le liseré sera placé en-dessous des ronds blanc et bleu */
+	top: 17px;
+}
+
+.rond_blanc
+{
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #FFF;
+	position: absolute;
+	z-index: 2;			/* le rond blanc sera placé par-dessus le liseré mais en-dessous du rond bleu */
+	left: 85px;
+}
+
+.rond_bleu
+{
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	background-color: #5CADD3;
+	position: absolute;
+	z-index: 3;			/* le rond bleu sera placé par-dessus le rond blanc et le liseré */
+	top: 8px;
+	left: 92.5px;
+}
+
+/* ##################################
+########### -- HEADER -- ############
+################################## */
+
+header
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	/* justify-content: space-around; */
+	/* padding: 10px 200px; */
+	align-items: center;			/* ajout */
+	min-height: 115px;			/* ajout */
+	/* en-tête fixe */
+	position: fixed;			/* ajout */
+	z-index: 99;			/* ajout */
+	background-color: rgba(255,255,255,0.7);			/* ajout */
+	width: 100%;
+}
+
+#en_tete			/* A SUPPRIMER */
+{
+  display: flex;  		/* alignement horizontal du logo principal avec la nav */
+  flex-direction: row;
+	justify-content: space-around;			/* centrage des éléments sur l'axe secondaire (vertical) */
+	align-items: center;
+  padding: 0px 0px 0px 0px; 		/* espacement entre l'en-tête et le slider */
+	min-height: 115px;
+	/* en-tête fixe */
+	position: fixed;
+	z-index: 99;
+	top: 0px;
+	background-color: rgba(255,255,255,0.7);
+	width: 100%;
+}
+
+.logo_titre img
+{
+	height: 75px;
+	margin-left: 175px;
+}
+
+.menu_en_tete
+{
+	margin-right: 175px;
+}
+
+.menu_en_tete a
+{
+  padding: 40px 15px;				/* espacement des différents liens de nav */
+}
+
+.menu_en_tete a:hover
+{
+	border-top: 3px solid #72B8D9;			/* apparition d'un trait bleu au-dessus des liens lorsqu'on passe le curseur */
+	/* background-color: #E5E5E5; */
+}
+
+header nav ul
+{
+  display: flex;  		/* alignement horizontal des puces de la nav */
+  flex-direction: row;
+}
+
+/* ##################################
+########### -- SLIDER -- ############
+################################## */
+
+.slider
+{
+	position: relative;
+	padding-top: 115px;
+}
+
+.image_slider
+{
+  width: 100%;		/* le slider prend tout la largeur de la page */
+}
+
+.bande_chargement
+{
+	height: 5px;
+	width: 100%;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	bottom: 4px;
+}
+
+.bande_bleue
+{
+	width: 200px;
+	background-color: #5CADD3;
+}
+
+.bande_grise
+{
+	background-color: rgb(0,0,0,0.1);
+	width: 100%;
+}
+
+.webagency_slider
+{
+	color: #5CADD3;		/* couleur du mot "WEBAGENCY" dans le slider */
+}
+
+.texte_slider
+{
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: absolute;
+	top: 40%;
+	left: 10%;
+	flex-wrap: wrap;
+	/* max-width: 775px; */
+	max-width: 40%;
+}
+
+.texte_slider h1
+{
+	font-size: 3em;
+}
+
+.bouton_info
+{
+	background-color: #5CADD3;
+	color: #FFF;
+	border-radius: 3px;
+	padding: 15px;
+	width: 110px;
+	box-shadow: 0px 3px 0px #468CAD;
+	font-size: 1.3em;
+	margin-top: 5px;
+}
+
+.fleche_gauche
+{
+	color: #FFF;
+	position: absolute;
+	left: 10px;
+	top: 55%;
+	z-index: 2;
+}
+
+.fleche_droite
+{
+	color: #FFF;
+	position: absolute;
+	right: 10px;
+	top: 55%;
+}
+
+.demi_cercle_gauche
+{
+	width: 45px;
+	height: 90px;
+	border: 0px;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	background-color: rgba(0,0,0,0.2);
+	position: absolute;
+	z-index: 1;
+	top: -30px;
+	left: -10px;
+}
+
+.demi_cercle_droite
+{
+	width: 45px;
+	height: 90px;
+	border: 0px;
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+	background-color: rgba(0,0,0,0.2);
+	position: absolute;
+	z-index: 1;
+	top: -30px;
+	right: -10px;
+}
+
+/* ##########################################
+########### -- "NOS SERVICES" -- ############
+########################################## */
+
+#services
+{
+	padding: 120px 0px 15px 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+.corps_services
+{
+	display: flex;
+	flex-direction: row;
+	/* padding: 75px 100px 0px 100px; */
+	/* padding: 75px 0px 0px 200px; */
+	/* padding: 75px 200px 0px 250px; */
+	padding-top: 75px;
+	justify-content: space-between;
+	/* justify-content: space-around; */
+	/* flex-wrap: wrap; */
+	margin: auto;
+}
+
+.corps_services img
+{
+	height: 400px;
+	padding-left: 50px;				/* AJOUT */
+}
+
+.liste_services
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* justify-content: space-around; */
+	height: 375px;
+	width: 725px;
+	padding: 100px 0px 15px 100px;
+}
+
+.logo_ux, .logo_ui, .logo_seo
+{
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+
+.cercle
+{
+	width: 80px;
+	height: 80px;
+	border: 2px solid #E5E5E5;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+}
+
+.rond_blanc2
+{
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #FFF;
+	position: absolute;
+	z-index: 2;			/* le rond blanc sera placé en-dessous du rond bleu */
+	top: 25px;
+	left: 64px;
+}
+
+.rond_bleu2
+{
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #5CADD3;
+	position: absolute;
+	z-index: 3;			/* le rond bleu sera placé par-dessus le rond blanc */
+	top: 33px;
+	left: 72.5px;
+}
+
+.chart_line, .cubes, .chart_pie
+{
+	color: #5CADD3;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+.ux_design, .ui_design, .seo
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	/* padding-left: 30px; */
+}
+
+.texte_ux, .texte_ui, .texte_seo
+{
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	/* padding-left: 60px; */
+	/* background-color: yellow; */
+}
+
+/* #########################################
+########### -- "NOS PROJETS" -- ############
+######################################### */
+
+#projets
+{
+	padding: 120px 0px 50px 0px;
+	display: flex;
+	flex-direction: column;
+	background-color: #F5F5F5;
+}
+
+.nav_projets
+{
+	margin: auto;
+	padding: 50px 0px 35px 0px;
+	min-height: 60px;
+}
+
+#projets nav ul
+{
+	display: flex;
+	flex-direction: row;
+}
+
+#projets nav a
+{
+	background-color: #E5E5E5;
+	padding: 15px;
+	min-width: 90px;
+	font-size: 1.2em;
+	text-align: center;
+	position: relative;			/* on positionne la nav en relatif afin de placer la flèche sous le lien de nav sélectionné */
+}
+
+.nav_1
+{
+	border-radius: 5px 0px 0px 5px;		/* arrondi des coins extérieurs du premier bouton de nav */
+}
+
+.nav_4
+{
+	border-radius: 0px 5px 5px 0px; /* arrondi des coins extérieurs du dernier bouton de nav */
+}
+
+.fleche_bas
+{
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #468CAD;
+	position: absolute;			/*positionnement en absolu par rapport à la nav*/
+	left: 50px;
+	bottom: -10px;
+	opacity: 0;
+}
+
+#projets nav a:hover
+{
+	background-color: #5CADD3;
+	border-bottom: 3px solid #468CAD;			/*soulignage des boutons de nav lors du passage du curseur*/
+	color: #FFF;
+}
+
+#projets nav a:hover .fleche_bas
+{
+	opacity: 1;
+}
+
+.portfolio
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;		/* on autorise le retour à la ligne dès qu'un élément dépasse la largeur de la page */
+	justify-content: space-between;
+	margin: auto;
+	max-width: 1540px;
+}
+
+.portfolio img
+{
+	max-width: 360px;
+	margin-bottom: 15px;
+}
+
+/* .details_projet
+{
+	color: #FFF;
+	background-color: rgba(0,0,0,0.5);
+	width: 330px;
+	padding: 15px;
+	position: absolute;
+	z-index: 2;
+	bottom: -65px;
+	opacity: 0;
+} */
+
+.details_projet				/* rajouté */
+{
+	color: #FFF;
+	background-color: rgba(0,0,0,0.5);
+	width: 330px;
+	padding: 15px;
+	height: 55px;
+	bottom: 19px;
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+	display: block;
+}
+
+.icone_oeil
+{
+	position: absolute;
+	z-index: 3;
+	width: 50px;
+	height: 50px;
+	border: 2px solid #FFF;
+	border-radius: 50%;
+	background-color: #5CADD3;
+	top: -26px;
+	right: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.portfolio_item
+{
+	position: relative;
+	z-index: 1;
+}
+
+/* .portfolio_item:hover .details_projet
+{
+	opacity: 1;
+	transition: opacity 0.75s ease-in;
+	animation: animation_portfolio 0.5s forwards;
+	-webkit-animation: animation_portfolio 0.5s forwards;
+} */
+
+.portfolio_item:hover .details_projet				/* rajouté */
+{
+	opacity: 1;
+	/* transition: opacity 0.75s ease-in; */
+	animation: animation_portfolio 0.5s ease;
+	-webkit-animation: animation_portfolio 0.5s ease;
+}
+
+/* Safari, Opera, Chrome */
+/* @-webkit-keyframes animation_portfolio {
+	0%{
+		transform: translateY(0px);
+	}
+	100%{
+		transform: translateY(-84px);
+	}
+} */
+
+/* Tous les autres navigateurs */
+/* @keyframes animation_portfolio {
+	0%{
+		transform: translateY(0px);
+	}
+	100%{
+		transform: translateY(-84px);
+	}
+} */
+
+@-webkit-keyframes animation_portfolio {				/* rajouté */
+	0%{
+		height: 0px;
+	}
+	100%{
+		height: 55px;
+	}
+}
+
+@keyframes animation_portfolio {				/* rajouté */
+	0%{
+		height: 0px;
+	}
+	100%{
+		height: 55px;
+	}
+}
+
+/* ###################################
+########### -- CONTACT -- ############
+################################### */
+
+#contact
+{
+	position: relative;		/* positionnement relatif du bloc "contact" afin de pouvoir placer correctement le formulaire */
+	background-color: rgb(0,165,245);
+}
+
+#contact iframe
+{
+	opacity: 0.8;			/* On rend la carte un peu transparente pour avoir le filtre bleu (background-color) */
+}
+
+.formulaire
+{
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.85);		/* on donne un peu de transparence au formulaire */
+	position: absolute;		/* positionnement absolu afin de placer le formulaire sur la carte Maps */
+	top: 75px;
+	right: 200px;
+	max-height: 75%;
+	/* width: 20%; */
+	width: 400px;
+}
+
+.formulaire form
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.formulaire input, textarea
+{
+	padding: 10px;		/* espacement à l'intérieur des champs du formulaire */
+	margin-bottom: 20px;		/* espacement entre les champs du formulaire */
+	border-radius: 5px;
+	border: 1px solid rgb(200,200,200);		/* METTRE LA BONNE COULEUR */
+	font-size: 1.15em;
+}
+
+.infosContact
+{
+	padding-bottom: 20px;
+}
+
+.infosContact h2
+{
+	padding-bottom: 15px;
+	font-size: 2em;
+}
+
+.infosContact h3, .infosContact p
+{
+	color: rgb(115,115,115);
+}
+
+.send_message				/* bouton "send message" du formulaire */
+{
+	color: #FFF;
+	background-color: #5CADD3;
+	border-radius: 3px;
+	border: none;
+	width: 150px;
+	padding: 10px 10px 10px 10px;
+	box-shadow: 0px 4px 0px #468CAD;
+	font-size: 1.1em;
+}
+
+/* ##################################
+########### -- FOOTER -- ############					A ENLEVER
+################################## */
+
+
+/* #pied_de_page
+{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.reseaux_sociaux
+{
+	padding: 10px;
+}
+
+.reseaux_sociaux img
+{
+	width: 50px;
+	height: 50px;
+}
+
+.reseaux_sociaux a
+{
+	margin: 5px;
+} */
+
+
+/* #########################################
+########### -- MEDIA QUERIES -- ############
+######################################### */
+
+/* Affichage de 1525px de large max */
+@media all and (max-width: 1525px) {
+	.texte_slider h1
+	{
+		font-size: 2.5em;
+	}
+
+	.corps_services img
+	{
+		padding-left: 0px;
+		height: 350px;
+	}
+
+	.liste_services
+	{
+		/* justify-content: space-around; */
+		width: 700px;
+		padding: 60px 0px 15px 0px;
+	}
+
+	.logo_ux, .logo_ui, .logo_seo
+	{
+		padding-right: 25px;
+	}
+
+	.portfolio
+	{
+		max-width: 1150px;
+		justify-content: center;
+	}
+
+	.portfolio_item
+	{
+		margin: 0px 10px;
+	}
+
+	.formulaire
+	{
+		right: 50px;
+	}
+}
+
+/* Affichage de 1275px de large max */
+@media all and (max-width: 1275px) {
+	.texte_slider
+	{
+		font-size: 0.9em;
+		top: 45%;
+	}
+
+	.bouton_info
+	{
+		padding: 10px;
+		width: 90px;
+		font-size: 1.2em;
+	}
+
+	.corps_services img
+	{
+		height: 300px;
+	}
+
+	.liste_services
+	{
+		width: 600px;
+		padding: 50px 0px 15px 0px;
+		/* justify-content: space-between; */
+	}
+
+	.liste_services p
+	{
+		line-height: 150%;
+	}
+
+	.logo_ux, .logo_ui, .logo_seo
+	{
+		padding-right: 40px;
+	}
+
+	.texte_ux, .texte_ui, .texte_seo
+	{
+		margin-bottom: 25px;
+	}
+
+	.formulaire
+	{
+		width: 300px;
+	}
+}
+
+/* Affichage de 1100px de large max */
+@media all and (max-width: 1100px) {
+	header
+	{
+		flex-direction: column;
+		/* padding: 0px; */
+		/* align-items: center; */
+		padding-top: 10px;
+		min-height: 150px;
+	}
+
+	.logo_titre img, .menu_en_tete
+	{
+		margin: 0px;			/* suppression des marges des 2 éléments du header */
+	}
+
+	.menu_en_tete a
+	{
+	  padding: 30px 15px;				/* espacement des différents liens de nav */
+	}
+
+	.menu_en_tete a:hover
+	{
+		border-top: none;				/* suppression du surlignage au survol du lien */
+		border-bottom: 3px solid #72B8D9;				/* ajout d'un soulignage au survol du lien */
+	}
+
+	.slider
+	{
+		padding-top: 171px;				/* agrandissagement du padding au-dessus du slider pour laisser la place au header */
+	}
+
+	.fleche_gauche, .fleche_droite
+	{
+		top: 62.5%;
+	}
+
+	.texte_slider
+	{
+		top: 47.5%;
+	}
+
+	.texte_slider h1
+	{
+		font-size: 2em;
+	}
+
+	#services, #projets
+	{
+		padding-top: 165px;
+	}
+
+	.corps_services img
+	{
+		height: 250px;
+	}
+
+	.liste_services
+	{
+		width: 550px;
+		padding: 25px 0px 15px 0px;
+	}
+
+	#contact
+	{
+		position: static;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: rgba(0,165,245,0);
+		padding-top: 170px;
+	}
+
+	.formulaire
+	{
+		position: static;
+		width: 400px;
+		text-align: center;
+		margin-top: 15px;
+		border: 1px solid rgb(190,190,190);
+		background-color: #F5F5F5;
+	}
+
+	iframe
+	{
+		height: 500px;
+		background-color: rgb(0,165,245);				/* NE FONCTIONNE PAS ??? */
+	}
+
+	.send_message
+	{
+		align-self: flex-end;
+	}
+}
+
+@media all and (max-width: 975px) {
+	.corps_services
+	{
+		flex-direction: column;
+		padding-top: 50px;
+		align-items: center;
+	}
+
+	.corps_services img
+	{
+		height: 290px;
+	}
+
+	.liste_services p
+	{
+		text-align: justify;
+	}
+}
+
+@media all and (max-width: 825px) {
+	.texte_slider
+	{
+		font-size: 0.8em;
+	}
+
+	.bouton_info
+	{
+		padding: 8px;
+		width: 80px;
+	}
+
+	.fleche_gauche, .fleche_droite
+	{
+		display: none;				/* suppression des flèches du slider */
+	}
+
+	.header_services p, .header_projets p
+	{
+		width: 85%;				/* les paragraphes d'intro des sections prennent plus de largeur */
+	}
+}
+
+@media all and (max-width: 650px) {
+	.texte_slider p
+	{
+		display: none;				/* suppression du sous-titre du slider */
+	}
+
+	.texte_slider
+	{
+		top: 55%;
+		font-size: 0.7em;
+	}
+
+	.bouton_info
+	{
+		width: 70px;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.texte_ux, .texte_ui, .texte_seo
+	{
+		font-size: 0.9em;
+	}
+
+	.liste_services
+	{
+		width: 465px;
+	}
+}
+
+@media all and (max-width: 500px) {
+	.texte_slider
+	{
+		font-size: 0.6em;
+		top: 57.5%;
+	}
+
+	.bouton_info
+	{
+		width: 60px;
+		padding: 7px;
+	}
+}
+
+
+/* ###########################################################################
+######## PROPRIETES TEMPORAIRES : AIDE AU POSITIONNEMENT DES ELEMENTS ########
+############################################################################*/
+
+/* .texte_ux, .texte_ui, .texte_seo
+{
+	background-color: yellow;
+} */
+
+/* .liste_services
+{
+	background-color: yellow;
+} */
+
+/* .corps_services img
+{
+	background-color: green;
+} */
