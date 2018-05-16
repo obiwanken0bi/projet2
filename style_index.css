@@ -109,7 +109,7 @@ header
 	/* justify-content: space-around; */
 	/* padding: 10px 200px; */
 	align-items: center;			/* ajout */
-	min-height: 115px;			/* ajout */
+	min-height: 105px;			/* ajout */
 	/* en-tête fixe */
 	position: fixed;			/* ajout */
 	z-index: 99;			/* ajout */
@@ -168,7 +168,7 @@ header nav ul
 .slider
 {
 	position: relative;
-	padding-top: 115px;
+	padding-top: 105px;
 }
 
 .image_slider
@@ -239,7 +239,7 @@ header nav ul
 	color: #FFF;
 	position: absolute;
 	left: 10px;
-	top: 55%;
+	top: 57.5%;
 	z-index: 2;
 }
 
@@ -248,7 +248,7 @@ header nav ul
 	color: #FFF;
 	position: absolute;
 	right: 10px;
-	top: 55%;
+	top: 57.5%;
 }
 
 .demi_cercle_gauche
@@ -285,7 +285,7 @@ header nav ul
 
 #services
 {
-	padding: 120px 0px 15px 0px;
+	padding: 105px 0px 15px 0px;
 	display: flex;
 	flex-direction: column;
 }
@@ -394,7 +394,7 @@ header nav ul
 
 #projets
 {
-	padding: 120px 0px 50px 0px;
+	padding: 105px 0px 50px 0px;
 	display: flex;
 	flex-direction: column;
 	background-color: #F5F5F5;
@@ -755,7 +755,7 @@ header nav ul
 	.texte_slider
 	{
 		font-size: 0.9em;
-		top: 45%;
+		top: 42.5%;
 	}
 
 	.bouton_info
@@ -792,6 +792,11 @@ header nav ul
 		margin-bottom: 25px;
 	}
 
+	#contact iframe
+	{
+		height: 700px;
+	}
+
 	.formulaire
 	{
 		width: 300px;
@@ -802,45 +807,33 @@ header nav ul
 @media all and (max-width: 1100px) {
 	header
 	{
-		flex-direction: column;
-		/* padding: 0px; */
-		/* align-items: center; */
-		/* padding-top: 10px; */
-		padding: 10px 0px 33px 0px;
-		/* min-height: 150px; */
-		min-height: 125px;
+		min-height: 105px;
 	}
 
-	.logo_titre img, .menu_en_tete
+	.logo_titre img
 	{
-		margin: 0px;			/* suppression des marges des 2 éléments du header */
+		margin-left: 100px;
+		height: 60px;				/* réduction de la taille du logo */
 	}
 
-	.menu_en_tete a
+	.menu_en_tete
 	{
-	  padding: 30px 15px;				/* espacement des différents liens de nav */
-		/* padding: 10px 15px; */
-	}
-
-	.menu_en_tete a:hover
-	{
-		border-top: none;				/* suppression du surlignage au survol du lien */
-		border-bottom: 3px solid #72B8D9;				/* ajout d'un soulignage au survol du lien */
+		margin-right: 100px;
 	}
 
 	.slider
 	{
-		padding-top: 171px;				/* agrandissagement du padding au-dessus du slider pour laisser la place au header */
+		padding-top: 105px;				/* agrandissagement du padding au-dessus du slider pour laisser la place au header */
 	}
 
 	.fleche_gauche, .fleche_droite
 	{
-		top: 62.5%;
+		top: 57.5%;
 	}
 
 	.texte_slider
 	{
-		top: 47.5%;
+		top: 42.5%;
 	}
 
 	.texte_slider h1
@@ -850,7 +843,7 @@ header nav ul
 
 	#services, #projets
 	{
-		padding-top: 165px;
+		padding-top: 105px;
 	}
 
 	.corps_services img
@@ -871,7 +864,13 @@ header nav ul
 		flex-direction: column;
 		align-items: center;
 		background-color: rgba(0,165,245,0);
-		padding-top: 170px;
+		padding-top: 105px;
+	}
+
+	#contact iframe
+	{
+		height: 550px;
+		background-color: rgb(0,165,245);				/* NE FONCTIONNE PAS ??? */
 	}
 
 	.formulaire
@@ -882,12 +881,6 @@ header nav ul
 		margin-top: 15px;
 		border: 1px solid rgb(190,190,190);
 		background-color: #F5F5F5;
-	}
-
-	iframe
-	{
-		height: 500px;
-		background-color: rgb(0,165,245);				/* NE FONCTIONNE PAS ??? */
 	}
 
 	.send_message
@@ -916,6 +909,35 @@ header nav ul
 }
 
 @media all and (max-width: 825px) {
+	header
+	{
+		flex-direction: column;
+		background-color: yellow;
+		padding: 10px 0px 18px 0px;
+	}
+
+	.logo_titre img, .menu_en_tete
+	{
+		margin: 0px;				/* suppression des marges des 2 éléments du header */
+	}
+
+	.menu_en_tete a
+	{
+		padding: 15px 10px;				/* espacement des différents liens de nav */
+		background-color: pink;
+	}
+
+	.menu_en_tete a:hover
+	{
+		border-top: none;				/* suppression du surlignage au survol du lien */
+		border-bottom: 3px solid #72B8D9;				/* ajout d'un soulignage au survol du lien */
+	}
+
+	.slider, #services, #projets, #contact
+	{
+		padding-top: 133px;
+	}
+
 	.texte_slider
 	{
 		font-size: 0.8em;
@@ -936,6 +958,11 @@ header nav ul
 	{
 		width: 85%;				/* les paragraphes d'intro des sections prennent plus de largeur */
 	}
+
+	#contact iframe
+	{
+		height: 450px;
+	}
 }
 
 @media all and (max-width: 650px) {
@@ -946,7 +973,7 @@ header nav ul
 
 	.texte_slider
 	{
-		top: 55%;
+		top: 50%;
 		font-size: 0.7em;
 	}
 
@@ -969,16 +996,37 @@ header nav ul
 }
 
 @media all and (max-width: 500px) {
+	header
+	{
+		min-height: 85px;
+		padding-top: 5px;
+	}
+
+	.logo_titre img
+	{
+		height: 45px;
+	}
+
+	.slider, #services, #projets, #contact
+	{
+		padding-top: 108px;
+	}
+
 	.texte_slider
 	{
 		font-size: 0.6em;
-		top: 57.5%;
+		top: 47.5%;
 	}
 
 	.bouton_info
 	{
 		width: 60px;
 		padding: 7px;
+	}
+
+	#contact iframe
+	{
+		height: 400px;
 	}
 }
 
