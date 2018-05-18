@@ -670,7 +670,7 @@ header nav ul
 	border-radius: 3px;
 	border: none;
 	width: 150px;
-	padding: 10px 10px 10px 10px;
+	padding: 10px;
 	box-shadow: 0px 4px 0px #468CAD;
 	font-size: 1.1em;
 }
@@ -912,7 +912,6 @@ header nav ul
 	header
 	{
 		flex-direction: column;
-		background-color: yellow;
 		padding: 10px 0px 18px 0px;
 	}
 
@@ -924,7 +923,6 @@ header nav ul
 	.menu_en_tete a
 	{
 		padding: 15px 10px;				/* espacement des différents liens de nav */
-		background-color: pink;
 	}
 
 	.menu_en_tete a:hover
@@ -1024,28 +1022,213 @@ header nav ul
 		padding: 7px;
 	}
 
+	.bande_chargement
+	{
+		height: 3px;
+	}
+
+	#services h1, #projets h1
+	{
+		font-size: 2.5em;
+	}
+
+	#services p, .header_projets p
+	{
+		font-size: 0.8em;
+	}
+
+	.corps_services
+	{
+		width: 350px;
+		padding-top: 25px;
+	}
+
+	.corps_services img
+	{
+		height: 220px;
+	}
+
+	.liste_services
+	{
+		max-height: 300px;
+		max-width: 350px;
+	}
+
+	.logo_ux, .logo_ui, .logo_seo
+	{
+		display: none;
+	}
+
+	.nav_projets
+	{
+		/* margin: auto; */
+		padding: 30px 0px 20px 0px;
+		/* min-height: 60px; */
+	}
+
+	#projets nav li
+	{
+		padding: 12px 8px;
+		min-width: 70px;
+		font-size: 0.95em;
+	}
+
+	.fleche_bas
+	{
+		left: 32.5px;
+	}
+
+	.portfolio_item
+	{
+		margin: 0px 5px;
+	}
+
+	.portfolio img
+	{
+		max-width: 300px;
+	}
+
+	.details_projet
+	{
+		width: 270px;
+		font-size: 0.85em;
+		height: 42px;
+	}
+
+	@-webkit-keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 42px;
+		}
+	}
+
+	@keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 42px;
+		}
+	}
+
 	#contact iframe
 	{
 		height: 400px;
 	}
+
+	.formulaire
+	{
+		width: 280px;
+		padding: 10px
+	}
+
+	.infosContact
+	{
+		font-size: 0.8em;
+		padding-bottom: 10px;
+	}
+
+	.formulaire input, textarea
+	{
+		padding: 8px;				/* espacement à l'intérieur des champs du formulaire */
+		margin-bottom: 15px;				/* espacement entre les champs du formulaire */
+		border-radius: 5px;
+		font-size: 0.9em;
+	}
+
+	.send_message				/* bouton "send message" du formulaire */
+	{
+		width: 120px;
+		padding: 8px 10px;
+		box-shadow: 0px 3px 0px #468CAD;
+		font-size: 0.9em;
+	}
 }
 
+@media all and (max-width: 425px) {
+	#services h1, #projets h1
+	{
+		font-size: 2em;
+	}
 
-/* ###########################################################################
-######## PROPRIETES TEMPORAIRES : AIDE AU POSITIONNEMENT DES ELEMENTS ########
-############################################################################*/
+	/* Réduction de la taille du texte_slider */
+	.texte_slider
+	{
+		font-size: 0.45em;
+		top: 52.5%;
+		left: 7.5%;
+	}
 
-/* .texte_ux, .texte_ui, .texte_seo
-{
-	background-color: yellow;
-} */
+	.bouton_info
+	{
+		padding: 6px 8px;
+		width: 45px;
+		box-shadow: 0px 2px 0px #468CAD;
+	}
 
-/* .liste_services
-{
-	background-color: yellow;
-} */
+	/* Passage du titre de la page sous le slider */
+	/* #services
+	{
+		margin-top: 100px;
+	}
 
-/* .corps_services img
-{
-	background-color: green;
-} */
+	.texte_slider
+	{
+		color: #000;
+		top: 110%;
+		left: 15%;
+		max-width: 70%;
+		text-align: center;
+		font-size: 0.6em;
+	}
+
+	.bouton_info
+	{
+		padding: 6px 8px;
+		box-shadow: 0px 1px 0px #468CAD;
+		margin: auto;
+		margin-top: 5px;
+	} */
+}
+
+@media all and (max-width: 375px) {
+	.corps_services
+	{
+		max-width: 300px;
+	}
+
+	.corps_services img
+	{
+		height: 180px;
+	}
+
+	.liste_services
+	{
+		max-width: 280px;
+	}
+
+	.liste_services h2
+	{
+		font-size: 1.3em;
+	}
+	/* diminuer la taille de la nav du portfolio */
+
+	.nav_projets
+	{
+		font-size: 0.9em;
+	}
+
+	#projets nav li
+	{
+		padding: 12px 8px;
+		min-width: 60px;
+		font-size: 0.95em;
+	}
+
+	.fleche_bas
+	{
+		left: 27.5px;
+	}
+}
