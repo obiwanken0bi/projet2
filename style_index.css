@@ -607,6 +607,7 @@ header nav ul
 {
 	position: relative;		/* positionnement relatif du bloc "contact" afin de pouvoir placer correctement le formulaire */
 	background-color: rgb(0,165,245);
+	height: 800px;
 }
 
 #contact iframe
@@ -707,7 +708,6 @@ header nav ul
 /* #########################################
 ########### -- MEDIA QUERIES -- ############
 ######################################### */
-
 /* Affichage de 1525px de large max */
 @media all and (max-width: 1525px) {
 	.texte_slider h1
@@ -792,7 +792,7 @@ header nav ul
 		margin-bottom: 25px;
 	}
 
-	#contact iframe
+	#contact iframe, #contact
 	{
 		height: 700px;
 	}
@@ -865,12 +865,12 @@ header nav ul
 		align-items: center;
 		background-color: rgba(0,165,245,0);
 		padding-top: 105px;
+		height: auto;
 	}
 
 	#contact iframe
 	{
 		height: 550px;
-		background-color: rgb(0,165,245);				/* NE FONCTIONNE PAS ??? */
 	}
 
 	.formulaire
@@ -1230,5 +1230,285 @@ header nav ul
 	.fleche_bas
 	{
 		left: 27.5px;
+	}
+}
+
+/* Affichage au-dessus de 2100px de large (=> 4K) */
+@media all and (min-width: 2100px) {
+	body
+	{
+		font-size: 1.5em;
+	}
+
+	header
+	{
+		min-height: 125px;
+	}
+
+	.logo_titre img
+	{
+		height: 100px;
+		margin-left: 200px;
+	}
+
+	.menu_en_tete
+	{
+		margin-right: 200px;
+		/* background-color: pink; */
+	}
+
+	.menu_en_tete a
+	{
+		font-size: 1.1em;
+		padding: 40px 35px;
+	}
+
+	.menu_en_tete a:hover
+	{
+		border-top: 6px solid #72B8D9;			/* apparition d'un trait bleu au-dessus des liens lorsqu'on passe le curseur */
+	}
+
+	.slider
+	{
+		padding-top: 125px;
+	}
+
+	.texte_slider p
+	{
+		font-size: 1.2em;
+	}
+
+	.bande_chargement
+	{
+		height: 10px;
+		bottom: 6px;
+	}
+
+	.bouton_info
+	{
+		border-radius: 5px;
+		padding: 20px;
+		width: 165px;
+		box-shadow: 0px 5px 0px #468CAD;
+		margin-top: 8px;
+	}
+
+	.fleche_gauche, .fleche_droite
+	{
+		top: 55%;
+		font-size: 1.5em;
+	}
+
+	.demi_cercle_gauche
+	{
+		width: 80px;
+		height: 160px;
+		border-top-right-radius: 80px;
+		border-bottom-right-radius: 80px;
+		top: -40px;
+	}
+
+	.demi_cercle_droite
+	{
+		width: 80px;
+		height: 160px;
+		border-top-left-radius: 80px;
+		border-bottom-left-radius: 80px;
+		top: -40px;
+	}
+
+	.separation
+	{
+		width: 300px;
+	}
+
+	.lisere
+	{
+		width: 300px;
+		height: 1px;
+		/* top: 17px; */
+	}
+
+	.rond_blanc
+	{
+		width: 40px;
+		height: 40px;
+		left: 135px;
+		top: -2px;
+	}
+
+	.rond_bleu
+	{
+		width: 20px;
+		height: 20px;
+		left: 145px;
+	}
+
+	#services, #projets
+	{
+		padding-top: 150px;
+	}
+
+	.corps_services img
+	{
+		height: 600px;
+		padding-left: 0px;
+	}
+
+	.logo_ux, .logo_ui, .logo_seo
+	{
+		width: 150px;
+		height: 150px;
+	}
+
+	.cercle
+	{
+		width: 125px;
+		height: 125px;
+		border: 3px solid #E5E5E5;
+	}
+
+	.rond_blanc2
+	{
+		width: 40px;
+		height: 40px;
+		top: 47.5px;
+		left: 107.5px;
+	}
+
+	.rond_bleu2
+	{
+		width: 20px;
+		height: 20px;
+		top: 57.5px;
+		left: 117.5px;
+	}
+
+	.chart_line, .cubes, .chart_pie
+	{
+		top: 42.5px;
+		left: 42.5px;
+	}
+
+	.liste_services
+	{
+		height: 600px;
+		width: 1000px;
+	}
+
+	.texte_ux, .texte_ui, .texte_seo
+	{
+		width: 675px;
+		padding-right: 150px;
+	}
+
+	.nav_projets
+	{
+		padding: 50px 0px 40px 0px;
+		min-height: 90px;
+	}
+
+	#projets nav li
+	{
+		padding: 25px;
+		min-width: 150px;
+	}
+
+	.nav_1
+	{
+		border-radius: 7px 0px 0px 7px;		/* arrondi des coins extérieurs du premier bouton de nav */
+	}
+
+	.nav_4
+	{
+		border-radius: 0px 7px 7px 0px; /* arrondi des coins extérieurs du dernier bouton de nav */
+	}
+
+	.fleche_bas
+	{
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-top: 15px solid #468CAD;
+		left: 85px;
+		bottom: -15px;
+	}
+
+	#projets nav li:hover
+	{
+		border-bottom: 5px solid #468CAD;			/*soulignage des boutons de nav lors du passage du curseur*/
+	}
+
+	.portfolio
+	{
+		max-width: 2000px;
+	}
+
+	.portfolio img
+	{
+		max-width: 480px;
+		margin-bottom: 25px;
+	}
+
+	.details_projet
+	{
+		width: 430px;
+		padding: 25px;
+		height: 65px;
+		bottom: 30px;
+	}
+
+	.icone_oeil
+	{
+		width: 70px;
+		height: 70px;
+		border: 3px solid #FFF;
+		top: -37px;
+		right: 20px;
+	}
+
+	@-webkit-keyframes animation_portfolio {				/* rajouté */
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 65px;
+		}
+	}
+
+	@keyframes animation_portfolio {				/* rajouté */
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 65px;
+		}
+	}
+
+	#contact, #contact iframe
+	{
+		height: 1000px;
+	}
+
+	.formulaire
+	{
+		padding: 30px;
+		top: 90px;
+		width: 500px;
+	}
+
+	.formulaire input, textarea
+	{
+		padding: 15px;		/* espacement à l'intérieur des champs du formulaire */
+		margin-bottom: 25px;		/* espacement entre les champs du formulaire */
+		border-radius: 7px;
+		font-size: 1.05em;
+	}
+
+	.send_message				/* bouton "send message" du formulaire */
+	{
+		border-radius: 6px;
+		width: 220px;
+		padding: 15px;
+		box-shadow: 0px 6px 0px #468CAD;
 	}
 }
