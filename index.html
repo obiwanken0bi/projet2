@@ -2,7 +2,9 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">      <!-- empêche la simulation d'un écran plus large, et empêche l'utilisateur de zoomer -->
+    <meta name="viewport" content="width=device-width">      <!-- empêche la simulation d'un écran plus large -->
+    <meta name="description" content="Chez Webagency, une équipe d'experts réalise votre site web de A à Z : étude, conception, design, développement, SEO et suivi."/>
+    <meta name="robots" content="noarchive"/>      <!-- Ne pas afficher de lien "En cache" dans les résultats de recherche -->
     <link rel="stylesheet" href="style_index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -14,15 +16,15 @@
     ############## HEADER ##############
     #################################-->
     <header>
-      <div class="logo_titre">
-        <a href="#"><img src="images/logo.png" alt="Webagency"></a>
-      </div>
+      <!-- Logo -->
+      <a href="#" class="logo_titre"><img src="images/logo.png" alt="Webagency"></a>
+      <!-- Menu de navigation principale -->
       <nav class="menu_en_tete">
         <ul>
-          <a href="index.html"><li>Accueil</li></a>
-          <a href="#services"><li>Services</li></a>
-          <a href="#projets"><li>Portfolio</li></a>
-          <a href="#contact"><li>Contact</li></a>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projets">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -66,9 +68,9 @@
         <p>Forte de plus de 10 ans d'expérience, notre équipe vous accompagne jusqu'à la réussite de vos projets web grâce une palette étendue de services.</p>
       </div>
       <div class="corps_services">
-        <div class="ordinateur_mac">
-          <img src="images/main-feature.png" alt="ordinateur mac">
-        </div>
+        <!-- Image du Mac -->
+        <img src="images/main-feature.png" alt="ordinateur mac" class="ordinateur_mac">
+        <!-- Liste des services -->
         <div class="liste_services">
           <div class="ux_design">
             <div class="logo_ux">
@@ -123,26 +125,28 @@
         </div>
         <p>C'est avec enthousiasme que notre équipe a travaillé sur des projets très différents. Voici quelques unes de nos réalisations.</p>
       </div>
+      <!-- Menu de navigation du portfolio -->
       <nav class="nav_projets">
         <ul>
-          <a href="#projets" class="nav_1">
-            <li>All Works</li>
+          <li class="nav_1">
+            <a href="#projets">All Works</a>
             <div class="fleche_bas"></div>
-          </a>
-          <a href="#projets">
-            <li>Creative</li>
+          </li>
+          <li>
+            <a href="#projets">Creative</a>
             <div class="fleche_bas"></div>
-          </a>
-          <a href="#projets">
-            <li>Corporate</li>
+          </li>
+          <li>
+            <a href="#projets">Corporate</a>
             <div class="fleche_bas"></div>
-          </a>
-          <a href="#projets" class="nav_4">
-            <li>Portfolio</li>
+          </li>
+          <li class="nav_4">
+            <a href="#projets">Portfolio</a>
             <div class="fleche_bas"></div>
-          </a>
+          </li>
         </ul>
       </nav>
+      <!-- Portfolio -->
       <div class="portfolio">
         <div class="portfolio_item">
           <img src="images/portfolio/01.jpg" alt="image 1">
@@ -231,7 +235,9 @@
     ############ "CONTACT" #############
     #################################-->
     <section id="contact">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2216096807224!2d2.347636915674888!3d48.87305177928887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e145ccb3091%3A0x9495beee8c96ec27!2s25+Rue+d&#39;Hauteville%2C+75010+Paris!5e0!3m2!1sfr!2sfr!4v1525709727416" width="100%" height="800" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <!-- Carte Maps -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2216096807224!2d2.347636915674888!3d48.87305177928887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e145ccb3091%3A0x9495beee8c96ec27!2s25+Rue+d&#39;Hauteville%2C+75010+Paris!5e0!3m2!1sfr!2sfr!4v1525709727416" class="carte_maps"></iframe>
+      <!-- Formulaire de contact -->
       <div class="formulaire">
         <div class="infosContact">
           <h2>Contact Info</h2>

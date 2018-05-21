@@ -7,56 +7,73 @@
 	src: url('fonts/Roboto-Medium.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'robotomedium';
+	src: url('fonts/Roboto-Medium-webfont.eot');
+	src: url('fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/Roboto-Medium-webfont.woff2') format('woff2'),
+	url('fonts/Roboto-Medium-webfont.woff') format('woff'),
+	url('fonts/Roboto-Medium-webfont.ttf') format('truetype'),
+	url('fonts/Roboto-Medium-webfont.svg#robotomedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 /* ################################################
 ########### -- PROPRIETES GENERALES -- ############
 ################################################ */
 
 *
 {
-	/* Mise à zéro des marges pour partir sur une bonne base */
 	margin: 0;
 	padding: 0;
-	font-family: 'Roboto-Medium';			/* police de base */
+	font-family: 'Roboto-Medium', 'robotomedium', sans-serif;
 }
 
 a
 {
 	color: #000;
-	list-style-type: none;  	/* suppression des puces */
-	text-decoration: none;  	/* suppression du soulignage */
+	list-style-type: none;
+	text-decoration: none;
+}
+
+ul
+{
+	list-style-type: none;
 }
 
 p
 {
-	flex-wrap: wrap;			/* les éléments des paragraphes vont à la ligne lorsqu'ils n'ont plus de place */
-	line-height: 180%;			/* augmentation de l'espace entre les lignes des paragraphes */
+	flex-wrap: wrap;
+	line-height: 180%;
 	font-size: 1.1em;
 }
 
 #services h1, #projets h1
 {
-	text-align: center;			/* centrage du titre par rapport au bloc */
+	text-align: center;
 	font-size: 3.5em;
 }
 
 .header_services, .header_projets
 {
-	margin: auto;			/* centrage du bloc (titre, paragraphe) par rapport à la page */
+	margin: auto;
 }
 
 .header_services p, .header_projets p
 {
 	width: 70%;
-	text-align: center;			/* centrage du texte par rapport au bloc */
-	margin: auto;			/* centrage du bloc par rapport à la page */
+	text-align: center;
+	margin: auto;
 }
 
+/* Séparation titre/paragraphe */
 .separation
 {
 	width: 200px;
 	height: 50px;
 	position: relative;
-	margin: auto;			/* centrage par rapport à la page */
+	margin: auto;
 }
 
 .lisere
@@ -65,7 +82,7 @@ p
 	height: 1px;
 	background-color: #E5E5E5;
 	position: absolute;
-	z-index: 1;			/* le liseré sera placé en-dessous des ronds blanc et bleu */
+	z-index: 1;			/* liseré < rond blanc < rond bleu */
 	top: 17px;
 }
 
@@ -76,7 +93,7 @@ p
 	border-radius: 50%;
 	background-color: #FFF;
 	position: absolute;
-	z-index: 2;			/* le rond blanc sera placé par-dessus le liseré mais en-dessous du rond bleu */
+	z-index: 2;
 	left: 85px;
 }
 
@@ -87,7 +104,7 @@ p
 	border-radius: 50%;
 	background-color: #5CADD3;
 	position: absolute;
-	z-index: 3;			/* le rond bleu sera placé par-dessus le rond blanc et le liseré */
+	z-index: 3;
 	top: 8px;
 	left: 92.5px;
 }
@@ -101,31 +118,13 @@ header
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	/* justify-content: space-around; */
-	/* padding: 10px 200px; */
-	align-items: center;			/* ajout */
-	min-height: 115px;			/* ajout */
-	/* en-tête fixe */
-	position: fixed;			/* ajout */
-	z-index: 99;			/* ajout */
-	background-color: rgba(255,255,255,0.7);			/* ajout */
-	width: 100%;
-}
-
-#en_tete			/* A SUPPRIMER */
-{
-  display: flex;  		/* alignement horizontal du logo principal avec la nav */
-  flex-direction: row;
-	justify-content: space-around;			/* centrage des éléments sur l'axe secondaire (vertical) */
 	align-items: center;
-  padding: 0px 0px 0px 0px; 		/* espacement entre l'en-tête et le slider */
-	min-height: 115px;
-	/* en-tête fixe */
+	min-height: 105px;
+	width: 100%;
+	/* En-tête fixe qui suit la navigation */
 	position: fixed;
 	z-index: 99;
-	top: 0px;
 	background-color: rgba(255,255,255,0.7);
-	width: 100%;
 }
 
 .logo_titre img
@@ -141,18 +140,17 @@ header
 
 .menu_en_tete a
 {
-  padding: 40px 15px;				/* espacement des différents liens de nav */
+  padding: 40px 15px;
 }
 
 .menu_en_tete a:hover
 {
-	border-top: 3px solid #72B8D9;			/* apparition d'un trait bleu au-dessus des liens lorsqu'on passe le curseur */
-	/* background-color: #E5E5E5; */
+	border-top: 3px solid #72B8D9;
 }
 
 header nav ul
 {
-  display: flex;  		/* alignement horizontal des puces de la nav */
+  display: flex;
   flex-direction: row;
 }
 
@@ -163,14 +161,15 @@ header nav ul
 .slider
 {
 	position: relative;
-	padding-top: 115px;
+	padding-top: 105px;
 }
 
 .image_slider
 {
-  width: 100%;		/* le slider prend tout la largeur de la page */
+  width: 100%;
 }
 
+/* Bande de chargement du slider */
 .bande_chargement
 {
 	height: 5px;
@@ -189,13 +188,8 @@ header nav ul
 
 .bande_grise
 {
-	background-color: rgb(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.1);
 	width: 100%;
-}
-
-.webagency_slider
-{
-	color: #5CADD3;		/* couleur du mot "WEBAGENCY" dans le slider */
 }
 
 .texte_slider
@@ -208,13 +202,17 @@ header nav ul
 	top: 40%;
 	left: 10%;
 	flex-wrap: wrap;
-	/* max-width: 775px; */
 	max-width: 40%;
 }
 
 .texte_slider h1
 {
 	font-size: 3em;
+}
+
+.webagency_slider
+{
+	color: #5CADD3;
 }
 
 .bouton_info
@@ -234,7 +232,7 @@ header nav ul
 	color: #FFF;
 	position: absolute;
 	left: 10px;
-	top: 55%;
+	top: 57.5%;
 	z-index: 2;
 }
 
@@ -243,7 +241,7 @@ header nav ul
 	color: #FFF;
 	position: absolute;
 	right: 10px;
-	top: 55%;
+	top: 57.5%;
 }
 
 .demi_cercle_gauche
@@ -280,7 +278,7 @@ header nav ul
 
 #services
 {
-	padding: 120px 0px 15px 0px;
+	padding: 105px 0px 15px 0px;
 	display: flex;
 	flex-direction: column;
 }
@@ -289,20 +287,15 @@ header nav ul
 {
 	display: flex;
 	flex-direction: row;
-	/* padding: 75px 100px 0px 100px; */
-	/* padding: 75px 0px 0px 200px; */
-	/* padding: 75px 200px 0px 250px; */
 	padding-top: 75px;
 	justify-content: space-between;
-	/* justify-content: space-around; */
-	/* flex-wrap: wrap; */
 	margin: auto;
 }
 
-.corps_services img
+.ordinateur_mac
 {
 	height: 400px;
-	padding-left: 50px;				/* AJOUT */
+	padding-left: 50px;
 }
 
 .liste_services
@@ -310,12 +303,12 @@ header nav ul
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* justify-content: space-around; */
 	height: 375px;
 	width: 725px;
 	padding: 100px 0px 15px 100px;
 }
 
+/* Construction des icônes de la liste des services */
 .logo_ux, .logo_ui, .logo_seo
 {
 	width: 100px;
@@ -330,7 +323,7 @@ header nav ul
 	border: 2px solid #E5E5E5;
 	border-radius: 50%;
 	position: absolute;
-	z-index: 1;
+	z-index: 1;			/* cercle < rond blanc < rond bleu */
 }
 
 .rond_blanc2
@@ -340,7 +333,7 @@ header nav ul
 	border-radius: 50%;
 	background-color: #FFF;
 	position: absolute;
-	z-index: 2;			/* le rond blanc sera placé en-dessous du rond bleu */
+	z-index: 2;
 	top: 25px;
 	left: 64px;
 }
@@ -352,7 +345,7 @@ header nav ul
 	border-radius: 50%;
 	background-color: #5CADD3;
 	position: absolute;
-	z-index: 3;			/* le rond bleu sera placé par-dessus le rond blanc */
+	z-index: 3;
 	top: 33px;
 	left: 72.5px;
 }
@@ -370,7 +363,6 @@ header nav ul
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	/* padding-left: 30px; */
 }
 
 .texte_ux, .texte_ui, .texte_seo
@@ -379,8 +371,6 @@ header nav ul
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	/* padding-left: 60px; */
-	/* background-color: yellow; */
 }
 
 /* #########################################
@@ -389,12 +379,13 @@ header nav ul
 
 #projets
 {
-	padding: 120px 0px 50px 0px;
+	padding: 105px 0px 50px 0px;
 	display: flex;
 	flex-direction: column;
 	background-color: #F5F5F5;
 }
 
+/* Menu de navigation du portfolio */
 .nav_projets
 {
 	margin: auto;
@@ -408,24 +399,25 @@ header nav ul
 	flex-direction: row;
 }
 
-#projets nav a
+#projets nav li
 {
 	background-color: #E5E5E5;
 	padding: 15px;
 	min-width: 90px;
 	font-size: 1.2em;
 	text-align: center;
-	position: relative;			/* on positionne la nav en relatif afin de placer la flèche sous le lien de nav sélectionné */
+	position: relative;
 }
 
+/* Arrondi des coins extérieurs de la nav */
 .nav_1
 {
-	border-radius: 5px 0px 0px 5px;		/* arrondi des coins extérieurs du premier bouton de nav */
+	border-radius: 5px 0px 0px 5px;
 }
 
 .nav_4
 {
-	border-radius: 0px 5px 5px 0px; /* arrondi des coins extérieurs du dernier bouton de nav */
+	border-radius: 0px 5px 5px 0px;
 }
 
 .fleche_bas
@@ -435,20 +427,20 @@ header nav ul
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 	border-top: 10px solid #468CAD;
-	position: absolute;			/*positionnement en absolu par rapport à la nav*/
+	position: absolute;
 	left: 50px;
 	bottom: -10px;
 	opacity: 0;
 }
 
-#projets nav a:hover
+#projets nav li:hover
 {
 	background-color: #5CADD3;
-	border-bottom: 3px solid #468CAD;			/*soulignage des boutons de nav lors du passage du curseur*/
+	border-bottom: 3px solid #468CAD;
 	color: #FFF;
 }
 
-#projets nav a:hover .fleche_bas
+#projets nav li:hover .fleche_bas
 {
 	opacity: 1;
 }
@@ -457,7 +449,7 @@ header nav ul
 {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;		/* on autorise le retour à la ligne dès qu'un élément dépasse la largeur de la page */
+	flex-wrap: wrap;
 	justify-content: space-between;
 	margin: auto;
 	max-width: 1540px;
@@ -469,19 +461,7 @@ header nav ul
 	margin-bottom: 15px;
 }
 
-/* .details_projet
-{
-	color: #FFF;
-	background-color: rgba(0,0,0,0.5);
-	width: 330px;
-	padding: 15px;
-	position: absolute;
-	z-index: 2;
-	bottom: -65px;
-	opacity: 0;
-} */
-
-.details_projet				/* rajouté */
+.details_projet
 {
 	color: #FFF;
 	background-color: rgba(0,0,0,0.5);
@@ -518,43 +498,15 @@ header nav ul
 	z-index: 1;
 }
 
-/* .portfolio_item:hover .details_projet
+/* Animation de la légende sur les images du portfolio */
+.portfolio_item:hover .details_projet
 {
 	opacity: 1;
-	transition: opacity 0.75s ease-in;
-	animation: animation_portfolio 0.5s forwards;
-	-webkit-animation: animation_portfolio 0.5s forwards;
-} */
-
-.portfolio_item:hover .details_projet				/* rajouté */
-{
-	opacity: 1;
-	/* transition: opacity 0.75s ease-in; */
 	animation: animation_portfolio 0.5s ease;
 	-webkit-animation: animation_portfolio 0.5s ease;
 }
 
-/* Safari, Opera, Chrome */
-/* @-webkit-keyframes animation_portfolio {
-	0%{
-		transform: translateY(0px);
-	}
-	100%{
-		transform: translateY(-84px);
-	}
-} */
-
-/* Tous les autres navigateurs */
-/* @keyframes animation_portfolio {
-	0%{
-		transform: translateY(0px);
-	}
-	100%{
-		transform: translateY(-84px);
-	}
-} */
-
-@-webkit-keyframes animation_portfolio {				/* rajouté */
+@-webkit-keyframes animation_portfolio {
 	0%{
 		height: 0px;
 	}
@@ -563,7 +515,7 @@ header nav ul
 	}
 }
 
-@keyframes animation_portfolio {				/* rajouté */
+@keyframes animation_portfolio {
 	0%{
 		height: 0px;
 	}
@@ -578,26 +530,31 @@ header nav ul
 
 #contact
 {
-	position: relative;		/* positionnement relatif du bloc "contact" afin de pouvoir placer correctement le formulaire */
+	position: relative;
 	background-color: rgb(0,165,245);
+	height: 800px;
 }
 
+/* Carte Google Maps */
 #contact iframe
 {
-	opacity: 0.8;			/* On rend la carte un peu transparente pour avoir le filtre bleu (background-color) */
+	opacity: 0.8;
+	width: 100%;
+	height: 800px;
+	border: none;
 }
 
+/* Formulaire de contact */
 .formulaire
 {
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
-	background-color: rgba(255, 255, 255, 0.85);		/* on donne un peu de transparence au formulaire */
-	position: absolute;		/* positionnement absolu afin de placer le formulaire sur la carte Maps */
+	background-color: rgba(255, 255, 255, 0.85);
+	position: absolute;
 	top: 75px;
 	right: 200px;
 	max-height: 75%;
-	/* width: 20%; */
 	width: 400px;
 }
 
@@ -610,10 +567,10 @@ header nav ul
 
 .formulaire input, textarea
 {
-	padding: 10px;		/* espacement à l'intérieur des champs du formulaire */
-	margin-bottom: 20px;		/* espacement entre les champs du formulaire */
+	padding: 10px;
+	margin-bottom: 20px;
 	border-radius: 5px;
-	border: 1px solid rgb(200,200,200);		/* METTRE LA BONNE COULEUR */
+	border: 1px solid rgb(200,200,200);
 	font-size: 1.15em;
 }
 
@@ -633,22 +590,22 @@ header nav ul
 	color: rgb(115,115,115);
 }
 
-.send_message				/* bouton "send message" du formulaire */
+/* Bouton "send message" du formulaire de contact */
+.send_message
 {
 	color: #FFF;
 	background-color: #5CADD3;
 	border-radius: 3px;
 	border: none;
 	width: 150px;
-	padding: 10px 10px 10px 10px;
+	padding: 10px;
 	box-shadow: 0px 4px 0px #468CAD;
 	font-size: 1.1em;
 }
 
 /* ##################################
-########### -- FOOTER -- ############					A ENLEVER
+########### -- FOOTER -- ############
 ################################## */
-
 
 /* #pied_de_page
 {
@@ -673,27 +630,27 @@ header nav ul
 	margin: 5px;
 } */
 
-
 /* #########################################
 ########### -- MEDIA QUERIES -- ############
 ######################################### */
 
-/* Affichage de 1525px de large max */
+/* Affichage de 1275px à 1525px de large */
 @media all and (max-width: 1525px) {
+	/* SLIDER */
 	.texte_slider h1
 	{
 		font-size: 2.5em;
 	}
 
-	.corps_services img
+	.ordinateur_mac
 	{
 		padding-left: 0px;
 		height: 350px;
 	}
 
+	/* SERVICES */
 	.liste_services
 	{
-		/* justify-content: space-around; */
 		width: 700px;
 		padding: 60px 0px 15px 0px;
 	}
@@ -703,6 +660,7 @@ header nav ul
 		padding-right: 25px;
 	}
 
+	/* PROJETS */
 	.portfolio
 	{
 		max-width: 1150px;
@@ -714,18 +672,20 @@ header nav ul
 		margin: 0px 10px;
 	}
 
+	/* CONTACT */
 	.formulaire
 	{
 		right: 50px;
 	}
 }
 
-/* Affichage de 1275px de large max */
+/* Affichage de 1100px à 1275px de large */
 @media all and (max-width: 1275px) {
+	/* SLIDER */
 	.texte_slider
 	{
 		font-size: 0.9em;
-		top: 45%;
+		top: 42.5%;
 	}
 
 	.bouton_info
@@ -735,7 +695,8 @@ header nav ul
 		font-size: 1.2em;
 	}
 
-	.corps_services img
+	/* SERVICES */
+	.ordinateur_mac
 	{
 		height: 300px;
 	}
@@ -744,7 +705,6 @@ header nav ul
 	{
 		width: 600px;
 		padding: 50px 0px 15px 0px;
-		/* justify-content: space-between; */
 	}
 
 	.liste_services p
@@ -762,52 +722,51 @@ header nav ul
 		margin-bottom: 25px;
 	}
 
+	/* CONTACT */
+	#contact iframe, #contact
+	{
+		height: 700px;
+	}
+
 	.formulaire
 	{
 		width: 300px;
 	}
 }
 
-/* Affichage de 1100px de large max */
+/* Affichage de 975px à 1100px de large */
 @media all and (max-width: 1100px) {
+	/* HEADER */
 	header
 	{
-		flex-direction: column;
-		/* padding: 0px; */
-		/* align-items: center; */
-		padding-top: 10px;
-		min-height: 150px;
+		min-height: 105px;
 	}
 
-	.logo_titre img, .menu_en_tete
+	.logo_titre img
 	{
-		margin: 0px;			/* suppression des marges des 2 éléments du header */
+		margin-left: 100px;
+		height: 60px;
 	}
 
-	.menu_en_tete a
+	.menu_en_tete
 	{
-	  padding: 30px 15px;				/* espacement des différents liens de nav */
+		margin-right: 100px;
 	}
 
-	.menu_en_tete a:hover
-	{
-		border-top: none;				/* suppression du surlignage au survol du lien */
-		border-bottom: 3px solid #72B8D9;				/* ajout d'un soulignage au survol du lien */
-	}
-
+	/* SLIDER */
 	.slider
 	{
-		padding-top: 171px;				/* agrandissagement du padding au-dessus du slider pour laisser la place au header */
+		padding-top: 105px;
 	}
 
 	.fleche_gauche, .fleche_droite
 	{
-		top: 62.5%;
+		top: 57.5%;
 	}
 
 	.texte_slider
 	{
-		top: 47.5%;
+		top: 42.5%;
 	}
 
 	.texte_slider h1
@@ -815,12 +774,13 @@ header nav ul
 		font-size: 2em;
 	}
 
+	/* SERVICES + PROJETS */
 	#services, #projets
 	{
-		padding-top: 165px;
+		padding-top: 105px;
 	}
 
-	.corps_services img
+	.ordinateur_mac
 	{
 		height: 250px;
 	}
@@ -831,6 +791,7 @@ header nav ul
 		padding: 25px 0px 15px 0px;
 	}
 
+	/* CONTACT */
 	#contact
 	{
 		position: static;
@@ -838,7 +799,13 @@ header nav ul
 		flex-direction: column;
 		align-items: center;
 		background-color: rgba(0,165,245,0);
-		padding-top: 170px;
+		padding-top: 105px;
+		height: auto;
+	}
+
+	#contact iframe
+	{
+		height: 550px;
 	}
 
 	.formulaire
@@ -851,19 +818,15 @@ header nav ul
 		background-color: #F5F5F5;
 	}
 
-	iframe
-	{
-		height: 500px;
-		background-color: rgb(0,165,245);				/* NE FONCTIONNE PAS ??? */
-	}
-
 	.send_message
 	{
 		align-self: flex-end;
 	}
 }
 
+/* Affichage de 825px à 975px de large */
 @media all and (max-width: 975px) {
+	/* SERVICES */
 	.corps_services
 	{
 		flex-direction: column;
@@ -871,7 +834,7 @@ header nav ul
 		align-items: center;
 	}
 
-	.corps_services img
+	.ordinateur_mac
 	{
 		height: 290px;
 	}
@@ -882,7 +845,38 @@ header nav ul
 	}
 }
 
+/* Affichage de 650px à 825px de large */
 @media all and (max-width: 825px) {
+	/* HEADER */
+	header
+	{
+		flex-direction: column;
+		padding: 10px 0px 18px 0px;
+	}
+
+	.logo_titre img, .menu_en_tete
+	{
+		margin: 0px;
+	}
+
+	.menu_en_tete a
+	{
+		padding: 15px 10px;
+	}
+
+	.menu_en_tete a:hover
+	{
+		border-top: none;
+		border-bottom: 3px solid #72B8D9;
+	}
+
+	/* SLIDER + SERVICES + PROJETS + CONTACT */
+	.slider, #services, #projets, #contact
+	{
+		padding-top: 133px;
+	}
+
+	/* SLIDER */
 	.texte_slider
 	{
 		font-size: 0.8em;
@@ -896,24 +890,33 @@ header nav ul
 
 	.fleche_gauche, .fleche_droite
 	{
-		display: none;				/* suppression des flèches du slider */
+		display: none;
 	}
 
+	/* SERVICES + PROJETS */
 	.header_services p, .header_projets p
 	{
-		width: 85%;				/* les paragraphes d'intro des sections prennent plus de largeur */
+		width: 85%;
+	}
+
+	/* CONTACT */
+	#contact iframe
+	{
+		height: 450px;
 	}
 }
 
+/* Affichage de 600px à 650px de large */
 @media all and (max-width: 650px) {
+	/* SLIDER */
 	.texte_slider p
 	{
-		display: none;				/* suppression du sous-titre du slider */
+		display: none;
 	}
 
 	.texte_slider
 	{
-		top: 55%;
+		top: 50%;
 		font-size: 0.7em;
 	}
 
@@ -923,7 +926,9 @@ header nav ul
 	}
 }
 
+/* Affichage de 500px à 600px de large */
 @media all and (max-width: 600px) {
+	/* SERVICES */
 	.texte_ux, .texte_ui, .texte_seo
 	{
 		font-size: 0.9em;
@@ -935,11 +940,31 @@ header nav ul
 	}
 }
 
+/* Affichage de 425px à 500px de large */
 @media all and (max-width: 500px) {
+	/* HEADER */
+	header
+	{
+		min-height: 85px;
+		padding-top: 5px;
+	}
+
+	.logo_titre img
+	{
+		height: 45px;
+	}
+
+	/* SLIDER + SERVICES + PROJETS + CONTACT */
+	.slider, #services, #projets, #contact
+	{
+		padding-top: 108px;
+	}
+
+	/* SLIDER */
 	.texte_slider
 	{
 		font-size: 0.6em;
-		top: 57.5%;
+		top: 47.5%;
 	}
 
 	.bouton_info
@@ -947,24 +972,481 @@ header nav ul
 		width: 60px;
 		padding: 7px;
 	}
+
+	.bande_chargement
+	{
+		height: 3px;
+	}
+
+	/* SERVICES + PROJETS */
+	#services h1, #projets h1
+	{
+		font-size: 2.5em;
+	}
+
+	#services p, .header_projets p
+	{
+		font-size: 0.8em;
+	}
+
+	/* SERVICES */
+	.corps_services
+	{
+		width: 350px;
+		padding-top: 25px;
+	}
+
+	.ordinateur_mac
+	{
+		height: 220px;
+	}
+
+	.liste_services
+	{
+		max-height: 300px;
+		max-width: 350px;
+	}
+
+	.logo_ux, .logo_ui, .logo_seo
+	{
+		display: none;
+	}
+
+	/* PROJETS */
+	.nav_projets
+	{
+		padding: 30px 0px 20px 0px;
+	}
+
+	#projets nav li
+	{
+		padding: 12px 8px;
+		min-width: 70px;
+		font-size: 0.95em;
+	}
+
+	.fleche_bas
+	{
+		left: 32.5px;
+	}
+
+	.portfolio_item
+	{
+		margin: 0px 5px;
+	}
+
+	.portfolio img
+	{
+		max-width: 300px;
+	}
+
+	.details_projet
+	{
+		width: 270px;
+		font-size: 0.85em;
+		height: 42px;
+	}
+
+	@-webkit-keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 42px;
+		}
+	}
+
+	@keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 42px;
+		}
+	}
+
+	/* CONTACT */
+	#contact iframe
+	{
+		height: 400px;
+	}
+
+	.formulaire
+	{
+		width: 280px;
+		padding: 10px
+	}
+
+	.infosContact
+	{
+		font-size: 0.8em;
+		padding-bottom: 10px;
+	}
+
+	.formulaire input, textarea
+	{
+		padding: 8px;
+		margin-bottom: 15px;
+		border-radius: 5px;
+		font-size: 0.9em;
+	}
+
+	.send_message
+	{
+		width: 120px;
+		padding: 8px 10px;
+		box-shadow: 0px 3px 0px #468CAD;
+		font-size: 0.9em;
+	}
 }
 
+/* Affichage de 375px à 425px de large */
+@media all and (max-width: 425px) {
+	/* SERVICES + PROJETS */
+	#services h1, #projets h1
+	{
+		font-size: 2em;
+	}
 
-/* ###########################################################################
-######## PROPRIETES TEMPORAIRES : AIDE AU POSITIONNEMENT DES ELEMENTS ########
-############################################################################*/
+	/* SLIDER */
+	.texte_slider
+	{
+		font-size: 0.45em;
+		top: 52.5%;
+		left: 7.5%;
+	}
 
-/* .texte_ux, .texte_ui, .texte_seo
-{
-	background-color: yellow;
-} */
+	.bouton_info
+	{
+		padding: 6px 8px;
+		width: 45px;
+		box-shadow: 0px 2px 0px #468CAD;
+	}
+}
 
-/* .liste_services
-{
-	background-color: yellow;
-} */
+/* Affichage de 0px à 375px de large */
+@media all and (max-width: 375px) {
+	/* SERVICES */
+	.corps_services
+	{
+		max-width: 300px;
+	}
 
-/* .corps_services img
-{
-	background-color: green;
-} */
+	.ordinateur_mac
+	{
+		height: 180px;
+	}
+
+	.liste_services
+	{
+		max-width: 280px;
+	}
+
+	.liste_services h2
+	{
+		font-size: 1.3em;
+	}
+
+	/* PROJETS */
+	.nav_projets
+	{
+		font-size: 0.9em;
+	}
+
+	#projets nav li
+	{
+		padding: 12px 8px;
+		min-width: 60px;
+		font-size: 0.95em;
+	}
+
+	.fleche_bas
+	{
+		left: 27.5px;
+	}
+}
+
+/* Affichage au-dessus de 2100px de large (=> 4K) */
+@media all and (min-width: 2100px) {
+	body
+	{
+		font-size: 1.5em;
+	}
+
+	/* HEADER */
+	header
+	{
+		min-height: 125px;
+	}
+
+	.logo_titre img
+	{
+		height: 100px;
+		margin-left: 200px;
+	}
+
+	.menu_en_tete
+	{
+		margin-right: 200px;
+	}
+
+	.menu_en_tete a
+	{
+		font-size: 1.1em;
+		padding: 40px 35px;
+	}
+
+	.menu_en_tete a:hover
+	{
+		border-top: 6px solid #72B8D9;
+	}
+
+	/* SLIDER */
+	.slider
+	{
+		padding-top: 125px;
+	}
+
+	.texte_slider p
+	{
+		font-size: 1.2em;
+	}
+
+	.bande_chargement
+	{
+		height: 10px;
+		bottom: 6px;
+	}
+
+	.bouton_info
+	{
+		border-radius: 5px;
+		padding: 20px;
+		width: 165px;
+		box-shadow: 0px 5px 0px #468CAD;
+		margin-top: 8px;
+	}
+
+	.fleche_gauche, .fleche_droite
+	{
+		top: 55%;
+		font-size: 1.5em;
+	}
+
+	.demi_cercle_gauche
+	{
+		width: 80px;
+		height: 160px;
+		border-top-right-radius: 80px;
+		border-bottom-right-radius: 80px;
+		top: -40px;
+	}
+
+	.demi_cercle_droite
+	{
+		width: 80px;
+		height: 160px;
+		border-top-left-radius: 80px;
+		border-bottom-left-radius: 80px;
+		top: -40px;
+	}
+
+	/* Séparation titre/paragraphe */
+	.separation
+	{
+		width: 300px;
+	}
+
+	.lisere
+	{
+		width: 300px;
+		height: 1px;
+	}
+
+	.rond_blanc
+	{
+		width: 40px;
+		height: 40px;
+		left: 135px;
+		top: -2px;
+	}
+
+	.rond_bleu
+	{
+		width: 20px;
+		height: 20px;
+		left: 145px;
+	}
+
+	/* SERVICES + PROJETS */
+	#services, #projets
+	{
+		padding-top: 150px;
+	}
+
+	/* SERVICES */
+	.ordinateur_mac
+	{
+		height: 600px;
+		padding-left: 0px;
+	}
+
+	.logo_ux, .logo_ui, .logo_seo
+	{
+		width: 150px;
+		height: 150px;
+	}
+
+	.cercle
+	{
+		width: 125px;
+		height: 125px;
+		border: 3px solid #E5E5E5;
+	}
+
+	.rond_blanc2
+	{
+		width: 40px;
+		height: 40px;
+		top: 47.5px;
+		left: 107.5px;
+	}
+
+	.rond_bleu2
+	{
+		width: 20px;
+		height: 20px;
+		top: 57.5px;
+		left: 117.5px;
+	}
+
+	.chart_line, .cubes, .chart_pie
+	{
+		top: 42.5px;
+		left: 42.5px;
+	}
+
+	.liste_services
+	{
+		height: 600px;
+		width: 1000px;
+	}
+
+	.texte_ux, .texte_ui, .texte_seo
+	{
+		width: 675px;
+		padding-right: 150px;
+	}
+
+	/* PROJETS */
+	.nav_projets
+	{
+		padding: 50px 0px 40px 0px;
+		min-height: 90px;
+	}
+
+	#projets nav li
+	{
+		padding: 25px;
+		min-width: 150px;
+	}
+
+	.nav_1
+	{
+		border-radius: 7px 0px 0px 7px;
+	}
+
+	.nav_4
+	{
+		border-radius: 0px 7px 7px 0px;
+	}
+
+	.fleche_bas
+	{
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-top: 15px solid #468CAD;
+		left: 85px;
+		bottom: -15px;
+	}
+
+	#projets nav li:hover
+	{
+		border-bottom: 5px solid #468CAD;
+	}
+
+	.portfolio
+	{
+		max-width: 2000px;
+	}
+
+	.portfolio img
+	{
+		max-width: 480px;
+		margin-bottom: 25px;
+	}
+
+	.details_projet
+	{
+		width: 430px;
+		padding: 25px;
+		height: 65px;
+		bottom: 30px;
+	}
+
+	.icone_oeil
+	{
+		width: 70px;
+		height: 70px;
+		border: 3px solid #FFF;
+		top: -37px;
+		right: 20px;
+	}
+
+	@-webkit-keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 65px;
+		}
+	}
+
+	@keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 65px;
+		}
+	}
+
+	/* CONTACT */
+	#contact, #contact iframe
+	{
+		height: 1000px;
+	}
+
+	.formulaire
+	{
+		padding: 30px;
+		top: 90px;
+		width: 500px;
+	}
+
+	.formulaire input, textarea
+	{
+		padding: 15px;
+		margin-bottom: 25px;
+		border-radius: 7px;
+		font-size: 1.05em;
+	}
+
+	.send_message
+	{
+		border-radius: 6px;
+		width: 220px;
+		padding: 15px;
+		box-shadow: 0px 6px 0px #468CAD;
+	}
+}
