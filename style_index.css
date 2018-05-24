@@ -409,10 +409,11 @@ header nav ul
 	position: relative;
 }
 
-/* Arrondi des coins extérieurs de la nav */
-.nav_1
+#projets .nav_1
 {
 	border-radius: 5px 0px 0px 5px;
+	background-color: #5CADD3;
+	border-bottom: 3px solid #468CAD;
 }
 
 .nav_4
@@ -439,12 +440,12 @@ header nav ul
 	border-bottom: 3px solid #468CAD;
 }
 
-#projets nav li:hover a
+#projets nav li:hover a, .nav_1 a
 {
 	color: #FFF;
 }
 
-#projets nav li:hover .fleche_bas
+#projets nav li:hover .fleche_bas, .nav_1 .fleche_bas
 {
 	opacity: 1;
 }
@@ -477,6 +478,11 @@ header nav ul
 	z-index: 2;
 	opacity: 0;
 	display: block;
+}
+
+.details_projet h2
+{
+	font-size: 1.2em;
 }
 
 .icone_oeil
@@ -583,15 +589,20 @@ header nav ul
 	padding-bottom: 20px;
 }
 
-.infosContact h2
+.infosContact h1
 {
 	padding-bottom: 15px;
 	font-size: 2em;
 }
 
-.infosContact h3, .infosContact p
+.infosContact h2, .infosContact p
 {
 	color: rgb(115,115,115);
+}
+
+.infosContact h2
+{
+	font-size: 1.2em;
 }
 
 /* Bouton "send message" du formulaire de contact */
@@ -638,7 +649,7 @@ header nav ul
 ########### -- MEDIA QUERIES -- ############
 ######################################### */
 
-/* Affichage de 1275px à 1525px de large */
+/* Affichage jusqu'à 1525px de large */
 @media all and (max-width: 1525px) {
 	/* SLIDER */
 	.texte_slider h1
@@ -676,6 +687,45 @@ header nav ul
 		margin: 0px 10px;
 	}
 
+	.portfolio img
+	{
+		max-width: 260px;
+	}
+
+	.details_projet
+	{
+		width: 230px;
+		height: 42px;
+	}
+
+	.details_projet h2
+	{
+		font-size: 1.1em;
+	}
+
+	.details_projet p
+	{
+		font-size: 0.9em;
+	}
+
+	@-webkit-keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 42px;
+		}
+	}
+
+	@keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 42px;
+		}
+	}
+
 	/* CONTACT */
 	.formulaire
 	{
@@ -683,7 +733,7 @@ header nav ul
 	}
 }
 
-/* Affichage de 1100px à 1275px de large */
+/* Affichage jusqu'à 1275px de large */
 @media all and (max-width: 1275px) {
 	/* SLIDER */
 	.texte_slider
@@ -738,7 +788,49 @@ header nav ul
 	}
 }
 
-/* Affichage de 975px à 1100px de large */
+/* Affichage jusqu'à 1195px de large */
+@media all and (max-width: 1195px) {
+	.portfolio img
+	{
+		max-width: 330px;
+	}
+
+	.details_projet
+	{
+		width: 300px;
+		height: 50px;
+	}
+
+	.details_projet h2
+	{
+		font-size: 1.2em;
+	}
+
+	.details_projet p
+	{
+		font-size: 1em;
+	}
+
+	@-webkit-keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 50px;
+		}
+	}
+
+	@keyframes animation_portfolio {
+		0%{
+			height: 0px;
+		}
+		100%{
+			height: 50px;
+		}
+	}
+}
+
+/* Affichage jusqu'à 1100px de large */
 @media all and (max-width: 1100px) {
 	/* HEADER */
 	header
@@ -828,7 +920,7 @@ header nav ul
 	}
 }
 
-/* Affichage de 825px à 975px de large */
+/* Affichage jusqu'à 975px de large */
 @media all and (max-width: 975px) {
 	/* SERVICES */
 	.corps_services
@@ -849,7 +941,7 @@ header nav ul
 	}
 }
 
-/* Affichage de 650px à 825px de large */
+/* Affichage jusqu'à 825px de large */
 @media all and (max-width: 825px) {
 	/* HEADER */
 	header
@@ -910,7 +1002,7 @@ header nav ul
 	}
 }
 
-/* Affichage de 600px à 650px de large */
+/* Affichage jusqu'à 650px de large */
 @media all and (max-width: 650px) {
 	/* SLIDER */
 	.texte_slider p
@@ -930,7 +1022,7 @@ header nav ul
 	}
 }
 
-/* Affichage de 500px à 600px de large */
+/* Affichage jusqu'à 600px de large */
 @media all and (max-width: 600px) {
 	/* SERVICES */
 	.texte_ux, .texte_ui, .texte_seo
@@ -944,7 +1036,7 @@ header nav ul
 	}
 }
 
-/* Affichage de 425px à 500px de large */
+/* Affichage jusqu'à 500px de large */
 @media all and (max-width: 500px) {
 	/* HEADER */
 	header
@@ -1104,7 +1196,7 @@ header nav ul
 	}
 }
 
-/* Affichage de 375px à 425px de large */
+/* Affichage jusqu'à 425px de large */
 @media all and (max-width: 425px) {
 	/* SERVICES + PROJETS */
 	#services h1, #projets h1
